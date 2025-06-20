@@ -1,0 +1,218 @@
+/* 全局样式重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+}
+
+#app {
+  height: 100%;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* 布局样式 */
+.layout-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.layout-header {
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0,21,41,.08);
+  z-index: 1000;
+}
+
+.layout-main {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.layout-sidebar {
+  width: 200px;
+  background: #001529;
+  transition: width 0.3s;
+}
+
+.layout-sidebar.collapsed {
+  width: 64px;
+}
+
+.layout-content {
+  flex: 1;
+  padding: 20px;
+  background: #f0f2f5;
+  overflow-y: auto;
+}
+
+/* 卡片样式 */
+.content-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.card-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #262626;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+/* 表格样式 */
+.table-toolbar {
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.table-toolbar-left {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.table-toolbar-right {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* 表单样式 */
+.form-container {
+  max-width: 600px;
+}
+
+.form-actions {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.form-actions .el-button {
+  margin: 0 8px;
+}
+
+/* 统计卡片 */
+.stats-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.stats-card.primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.stats-card.success {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.stats-card.warning {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.stats-card.danger {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.stats-number {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.stats-label {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .layout-sidebar {
+    position: fixed;
+    left: -200px;
+    top: 0;
+    height: 100vh;
+    z-index: 1001;
+    transition: left 0.3s;
+  }
+  
+  .layout-sidebar.mobile-open {
+    left: 0;
+  }
+  
+  .layout-content {
+    padding: 12px;
+  }
+  
+  .table-toolbar {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+  
+  .form-container {
+    max-width: 100%;
+  }
+}
+
+/* 动画效果 */
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.3s;
+}
+
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+}
+
+.slide-enter-active, .slide-leave-active {
+  transition: transform 0.3s;
+}
+
+.slide-enter-from {
+  transform: translateX(-100%);
+}
+
+.slide-leave-to {
+  transform: translateX(100%);
+} 
