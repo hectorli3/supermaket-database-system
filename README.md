@@ -1,2 +1,3 @@
 基于openguass的超市管理系统。
 菜鸡的课程作业
+使用的环境是docker，后端是python的flask库，前段时node.js
